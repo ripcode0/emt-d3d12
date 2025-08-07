@@ -11,6 +11,12 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+if(CMAKE_CONFIGURATION_TYPES)
+    message(STATUS "Multi-config generator detected.")
+else()
+    message(STATUS "Single-config generator detected.")
+endif()
+
 add_executable(deps srcs/main.cpp)
 
 target_compile_definitions(deps PRIVATE
@@ -22,4 +28,5 @@ target_compile_definitions(deps PRIVATE
 set_target_properties(deps PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/$<CONFIG>
     RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_CURRENT_BINARY_DIR}/Debug
+    RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_CURRENT_BINARY_DIR}/Release
 )

@@ -4,3 +4,5 @@
 [Ee]xternal/
 [Bb]in/
 .vscode/
+
+*.cmd

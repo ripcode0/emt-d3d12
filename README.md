@@ -1,37 +1,26 @@
 # EMT Dependency Installer
 
-### EMT Dependency Installer 
-* `CMake` 기반으로 제작된 `CLI` 방식의 `C/C++` 라이브러리 설치 도구입니다.  
-* 간단한 명령어와 설정만으로 외부 라이브러리를 자동 다운로드, 빌드, 설치할 수 있습니다.
+### EMT Dependency Installer  
+A CMake-based CLI tool for installing C/C++ libraries.  
+With just a few flags, it can automatically clone, build, and install external libraries into your project.
 
-### 특징
+### Features
 
-- `CMake` 기반으로 별도 스크립트 언어나 의존성 없음
-- **CLI** 플래그를 통한 간편한 옵션 제어
-- `Git` 저장소로부터 외부 라이브러리 자동 설치
-- 프로젝트 통합을 위한 `prefix` 경로 지정 가능
+- Pure CMake-based — no external scripting or dependencies
+- Simple CLI interface with flexible flags
+- Automatically clones and installs libraries from Git repositories
+- Supports project integration via custom install `prefix`
 
-### 요구사항
+### Requirements
 
-- **CMake 3.22** 이상
+- **CMake 3.22** or higher
 - **Git**
-- **C++20** 또는 그 이상을 지원하는 컴파일러
-- **Ninja** 또는 기타 **CMake** 호환 빌드 시스템
+- A **C++20** (or later) compatible compiler
+- A build system such as **Ninja**, or any CMake-compatible generator
 
-### 기본 사용법
+### Basic Usage
 
 ```bash
 cmake -S . -B build -DCMAKE_INSTALL_PREFIX=external
 cmake --build build --target install
 ```
-
-### CLI 플래그
-
-*  `--git     <url>`      설치할 라이브러리의 Git 주소  
-    * `--git https://github.com/glfw/glfw.git`
-
-* `--prefix  <path>`     설치 경로 (CMAKE_INSTALL_PREFIX)  
-    * `--prefix ./external`
-
-*  `--config  <type>`     CMake 구성 옵션 (Debug, Release 등)  
-    * `--config Release`
