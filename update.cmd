@@ -1,8 +1,8 @@
 @echo off
 
-set d=%DATE%
+set date=%DATE%
 set time=%TIME%
 
 git add .
-git commit -m "updated %d% %time%"
+git commit -m "updated %date% %time%"
 git push origin main
