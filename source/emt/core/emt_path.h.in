@@ -1,0 +1,4 @@
+#pragma once
+
+#define EMT_DATA_DIR "@EMT_DATA_DIR@"
+#define EMT_HLSL_DIR "@EMT_HLSL_DIR@"
